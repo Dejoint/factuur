@@ -1,0 +1,29 @@
+.top-image {
+    background-image: url(/img/home.jpg);
+    background-color: #cccccc;
+    height: 75vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+.top-text {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+.top-text h1 {
+    font-size: 500%;
+}
+.section2 {
+    background-color: #FFFFFF;
+    padding: 0px;
+    height: 75vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

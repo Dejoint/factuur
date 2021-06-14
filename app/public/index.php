@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+error_reporting(E_ERROR | E_PARSE);
 if (!isset($_SESSION['user'])) {
 header('Location: login.php');
 }
@@ -28,8 +28,8 @@ if (isset($_POST['moduleAction']) && ($_POST['moduleAction'] == 'submit')) {
 			if ($addId == $artikel[1]) {
 				$artikel[0] = $artikel[0] + $aantal;
 				$item_array = array($artikel[0], $addId);
-			$_SESSION['cart'][$key] = $item_array;
-			$toegevoegd = true;
+				$_SESSION['cart'][$key] = $item_array;
+				$toegevoegd = true;
 			}
 			$nrArtikel++;
 		}

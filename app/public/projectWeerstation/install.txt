@@ -1,0 +1,63 @@
+UBUNTU 20.04 =>
+sudo apt update 
+sudo apt install apache2
+sudo systemctl status apache2 (Check if it runs)
+sudo systemctl enable apache2
+sudo systemctl start apache2
+cd /var/www/html
+sudo rm index.html
+
+Sudo apt install vim
+
+sudo apt install mysql-server
+sudo mysql_secure_installation
+<<< TEST >>>
+sudo mysql -u root -p
+
+sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
+Select webserver =>apache2 !!! PRESS SPACE TO SELECT !!!
+
+If configuration fails due to error: Your password does not statisfy the current policy requirements: Abort
+
+	=> sudo mysql -u root -p 
+	mysql> UNINSTALL COMPONENT "file://component_validate_password";
+	mysql> exit
+	sudo apt install phpmyadmin
+	sudo mysql -u root -p
+	mysql> INSTALL COMPONENT "file://component_validate_password";
+
+
+
+sudo phpenmod mbstring
+sudo systemctl restart apache2
+sudo mysql -u root -p
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+exit
+
+sudo apt install python3.8
+sudo apt install python3-pip
+pip3 install pyserial
+pip3 install pymysql
+
+sudo apt install git 
+sudo git clone https://github.com/Dejoint/project_WPOSAD.git
+
+sudo mv -v /var/www/html/project_WPOSAD/* /var/www/html/
+sudo rm -r project_WPOSAD
+
+go to http://yourip/phpmyadmin
+log in as root
+go to import 
+import file /var/www/html/schema.sql
+
+
+Go to project.py and 
+edit your username and password
+
+With this command you give php access to the arduino
+sudo chmod 777 /dev/ttyACM0
+As last you enter this command.
+nohup python3 project.py > output.log &
+
+Go to http://<yourip>
+and get started!
